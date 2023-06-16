@@ -23,9 +23,15 @@ the allocate(size) function deals with the cases :
 3) dont have a free block 
    3.1) got enough space -> allocate at the end , set the tail , exit with (header+1)
    3.2) dont have enough space -> exit with NULL
-
-
 4) set the head if needed 
+
+
+the deallocate(void \*block ) fucntion:
+1) the location so we 
+        1.1) can mark it as free (in in middle)
+        1.2) release it to os if at the end
+
+
 
 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 HEADERS : 
@@ -62,4 +68,7 @@ after int : 0x55a106325035
 after double : 0x55a106325055
 8.000000 is allocated at  : 0x55a10632504d
 
-
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+generating .so file and using it ?
+preload it (linker) and use it as a shared library to use the allocate() function in other files
+however, the .so file must be have the same path as the project you are trying to compile
